@@ -17,7 +17,7 @@ const Hero = () => {
         <div className="hero-content">
           <h2 className="hero-greeting">Portofolio Profesional</h2>
           <h1 className="hero-name">Faradina</h1>
-          <h3 className="hero-title">Tax Specialist & Communicator</h3>
+          <h3 className="hero-title">Junior Tax Consultant & Digital Content Creator</h3>
           <p className="hero-tagline glass-card" style={{ padding: '20px', display: 'inline-block' }}>
             Membangun kepatuhan perpajakan yang strategis dengan komunikasi yang efektif. 
             Berpengalaman dalam mengelola regulasi, pelaporan, dan riset pajak untuk memastikan efisiensi dan tata kelola yang optimal.
@@ -35,7 +35,7 @@ const Hero = () => {
         </div>
         <div className="hero-image-wrapper">
           <div className="hero-image-placeholder glass-card">
-            <img src="rarapro.png" alt="" />
+            <img src="rarapro.png" alt="img-profile" />
             <div className="hero-blob"></div>
           </div>
         </div>
