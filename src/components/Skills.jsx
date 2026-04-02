@@ -4,20 +4,23 @@ import { CheckCircle2, PenTool } from 'lucide-react';
 
 const Skills = () => {
   const coreSkills = [
+    "Public Speaking Expert",
+    "Video Editing & Talent",
+    "Social Media Expert",
     "Tax Compliance",
     "Tax Reporting (SPT Tahunan, PPh 21, PPN)",
     "e-Filing & e-Bupot",
     "Financial Analysis",
     "Indonesian Tax Regulation",
-    "Public Speaking Expert",
-    "Video Editing & Talent",
-    "Social Media Expert"
+    
   ];
 
   const tools = [
     { name: "DJP Online & Coretax", level: "Expert" },
     { name: "Microsoft Excel (Advanced)", level: "Expert" },
     { name: "Accurate / SAP", level: "Intermediate" },
+    { name: "Odoo ERP Software", level: "Intermediate" },
+    { name: "Meta Ads", level: "Intermediate" },
     { name: "Capcut (Professional)", level: "Expert" },
     { name: "Canva (Professional)", level: "Expert" }
   ];
