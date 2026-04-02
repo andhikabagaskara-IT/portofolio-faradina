@@ -23,7 +23,7 @@ const Contact = ({ onOpenCVModal }) => {
     
     // Encode the url
     const encodedMessage = encodeURIComponent(message);
-    const waUrl = `https://wa.me/6281234567890?text=${encodedMessage}`;
+    const waUrl = `https://wa.me/6288805061391?text=${encodedMessage}`;
     
     window.open(waUrl, '_blank');
   };
@@ -41,15 +41,15 @@ const Contact = ({ onOpenCVModal }) => {
           </p>
           
           <div className="contact-methods">
-            <a href="mailto:contact@faradinapajak.com" className="contact-card glass-card">
+            <a href="mailto:[faradinaauliar@gmail.com]" className="contact-card glass-card">
               <Mail className="contact-icon" />
               <div className="contact-info">
                 <h3>Email</h3>
-                <p>contact@faradinapajak.com</p>
+                <p>[faradinaauliar@gmail.com]</p>
               </div>
             </a>
             
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="contact-card glass-card">
+            <a href="https://www.linkedin.com/in/faradina-aulia-209282218/" target="_blank" rel="noreferrer" className="contact-card glass-card">
               <Link className="contact-icon" />
               <div className="contact-info">
                 <h3>LinkedIn</h3>

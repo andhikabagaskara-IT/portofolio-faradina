@@ -35,7 +35,7 @@ const Hero = () => {
         </div>
         <div className="hero-image-wrapper">
           <div className="hero-image-placeholder glass-card">
-            <img src="rarapro.jpg" alt="" />
+            <img src="rarapro.png" alt="" />
             <div className="hero-blob"></div>
           </div>
         </div>
