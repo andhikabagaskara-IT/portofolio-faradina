@@ -35,8 +35,7 @@ const Hero = () => {
         </div>
         <div className="hero-image-wrapper">
           <div className="hero-image-placeholder glass-card">
-            {/* Foto profil profesional */}
-            <span>[Foto Profesional]</span>
+            <img src="rarapro.jpg" alt="" />
             <div className="hero-blob"></div>
           </div>
         </div>
