@@ -1,0 +1,207 @@
+.contact-footer {
+  padding-top: 100px;
+  position: relative;
+}
+
+.contact-container {
+  display: flex;
+  gap: 60px;
+  padding-bottom: 80px;
+}
+
+.contact-content {
+  flex: 5;
+}
+
+.contact-title {
+  font-size: 3rem;
+  color: var(--color-primary);
+  margin-bottom: 20px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.contact-subtitle {
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  max-width: 600px;
+}
+
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
+}
+
+.contact-icon {
+  width: 50px;
+  height: 50px;
+  color: var(--color-primary);
+  background-color: rgba(37, 99, 235, 0.1);
+  padding: 12px;
+  border-radius: 16px;
+}
+
+[data-theme='dark'] .contact-icon {
+  background-color: rgba(59, 130, 246, 0.2);
+}
+
+.contact-info h3 {
+  font-size: 1.15rem;
+  color: var(--color-text);
+  margin-bottom: 4px;
+}
+
+.contact-info p {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+}
+
+/* WhatsApp Form Style */
+.contact-form-side {
+  flex: 6;
+  display: flex;
+  flex-direction: column;
+}
+
+.wa-form-card {
+  padding: 40px;
+  transition: all 0.5s ease;
+}
+
+.wa-form-card h3 {
+  color: var(--color-primary);
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.wa-form-desc {
+  color: var(--color-text-muted);
+  margin-bottom: 30px;
+}
+
+.wa-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+
+.form-group input, .select-wrapper select {
+  width: 100%;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-size: 1rem;
+  transition: all 0.3s;
+  font-family: inherit;
+  outline: none;
+}
+
+.form-group input:focus, .select-wrapper select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Custom select styling */
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper::after {
+  content: "▼";
+  font-size: 0.8rem;
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--color-text-muted);
+}
+
+.select-wrapper select {
+  appearance: none;
+  cursor: pointer;
+}
+
+.cv-box {
+  padding: 40px;
+  text-align: center;
+}
+
+.cv-box h3 {
+  font-size: 1.5rem;
+  color: var(--color-text);
+  margin-bottom: 16px;
+}
+
+.cv-box p {
+  color: var(--color-text-muted);
+  margin-bottom: 30px;
+}
+
+.cv-btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--color-border);
+  padding: 30px 0;
+  text-align: center;
+  background-color: var(--color-bg-alt);
+}
+
+.footer-bottom p {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+}
+
+/* Scroll Trigger Focus Target Glow Animation */
+#contact:target .wa-form-card {
+  animation: formGlow 3s ease-out;
+}
+
+.wa-form-card.is-glowing {
+  animation: formGlow 3s ease-out;
+}
+
+@keyframes formGlow {
+  0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); border-color: transparent; }
+  15% { box-shadow: 0 0 30px 15px rgba(245, 158, 11, 0.6); border-color: var(--color-secondary); transform: scale(1.02); }
+  50% { box-shadow: 0 0 20px 5px rgba(245, 158, 11, 0.4); border-color: var(--color-secondary); transform: scale(1.01); }
+  100% { box-shadow: var(--glass-shadow); border-color: rgba(255, 255, 255, 0.1); transform: scale(1); }
+}
+
+[data-theme="dark"] @keyframes formGlow {
+  0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); border-color: transparent; }
+  15% { box-shadow: 0 0 40px 15px rgba(245, 158, 11, 0.4); border-color: var(--color-secondary); transform: scale(1.02); }
+  100% { box-shadow: var(--glass-shadow); border-color: rgba(255, 255, 255, 0.05); transform: scale(1); }
+}
+
+@media (max-width: 992px) {
+  .contact-container {
+    flex-direction: column;
+  }
+}

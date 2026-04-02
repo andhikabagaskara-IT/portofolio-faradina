@@ -1,0 +1,206 @@
+.gallery-main-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+/* Wrapper for animated stroke */
+.gallery-main-card {
+  position: relative;
+  padding: 6px; /* Space for the stroke to show */
+  border-radius: 30px;
+}
+
+/* SVG border tracing animation */
+.animated-border {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  border-radius: 30px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.animated-border rect {
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  fill: none;
+  stroke: var(--color-secondary);
+  stroke-width: 4;
+  stroke-dasharray: 200 400; /* Create dashed lines */
+  stroke-dashoffset: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-main-card:hover .animated-border rect {
+  opacity: 1;
+  animation: borderDraw 4s linear infinite;
+}
+
+@keyframes borderDraw {
+  0% { stroke-dashoffset: 600; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.gallery-main-content {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  cursor: pointer;
+}
+
+.gallery-main-img-wrap {
+  width: 100%;
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px 24px 0 0;
+}
+
+.gallery-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.gallery-main-card:hover .gallery-main-img {
+  transform: scale(1.15); /* Zoom In effect */
+}
+
+.gallery-hover-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(15, 23, 42, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.gallery-main-card:hover .gallery-hover-overlay {
+  opacity: 1;
+}
+
+.gallery-main-text {
+  padding: 24px;
+}
+.gallery-main-text h3 {
+  color: var(--color-primary);
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+.gallery-main-text p {
+  color: var(--color-text-muted);
+}
+
+/* Nested Modal Styling */
+.nested-modal-backdrop {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(15, 23, 42, 0.9);
+  backdrop-filter: blur(12px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  animation: fadeIn 0.3s ease;
+}
+
+.nested-modal-content {
+  width: 100%;
+  max-width: 1100px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+}
+
+.nested-modal-header {
+  padding: 30px;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nested-modal-header h2 {
+  color: var(--color-primary);
+  margin: 0;
+  font-size: 2rem;
+}
+
+.nested-modal-body {
+  padding: 40px;
+  overflow-y: auto;
+}
+
+.sub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.sub-card {
+  background: var(--color-bg);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.sub-img-wrapper {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.sub-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+/* Hover effects for sub photo: Zoom In + Slow Tilt/Wiggle */
+.sub-card:hover .sub-img {
+  animation: wiggleTilt 3s ease-in-out infinite; 
+  transform: scale(1.15); /* Keep it zoomed while vibrating */
+}
+
+@keyframes wiggleTilt {
+  0% { transform: scale(1.15) rotate(0deg); }
+  25% { transform: scale(1.15) rotate(-3deg); }
+  75% { transform: scale(1.15) rotate(3deg); }
+  100% { transform: scale(1.15) rotate(0deg); }
+}
+
+.sub-text {
+  padding: 20px;
+}
+
+.sub-text h4 {
+  font-size: 1.15rem;
+  color: var(--color-text);
+  margin-bottom: 8px;
+}
+
+.sub-text p {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+/* Scrollbar */
+.nested-modal-body::-webkit-scrollbar { width: 8px; }
+.nested-modal-body::-webkit-scrollbar-track { background: var(--color-bg); }
+.nested-modal-body::-webkit-scrollbar-thumb { background: var(--color-primary); border-radius: 10px; }
+
+@media (max-width: 992px) {
+  .gallery-main-grid { grid-template-columns: 1fr; }
+}
