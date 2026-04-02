@@ -32,7 +32,7 @@ const About = () => {
                   <div className="edu-content">
                     <h4>Universitas Airlangga</h4>
                     <span className="edu-major">D3 Perpajakan</span>
-                    <span className="edu-score">IPK: 3.85 / 4.00</span>
+                    <span className="edu-score">IPK: 3.95 / 4.00</span>
                   </div>
                 </div>
               </li>
@@ -40,9 +40,9 @@ const About = () => {
                 <div className="edu-item">
                   <div className="edu-bullet"></div>
                   <div className="edu-content">
-                    <h4>SMA Negeri 1 Surabaya</h4>
-                    <span className="edu-major">Ilmu Pengetahuan Sosial (IPS)</span>
-                    <span className="edu-score">Nilai Akhir Rata-rata: 92</span>
+                    <h4>SMA/MAN 1 Surabaya</h4>
+                    <span className="edu-major">Ilmu Pengetahuan Alam (IPA)</span>
+                    <span className="edu-score">Nilai Akhir Rata-rata: 95</span>
                   </div>
                 </div>
               </li>
@@ -50,9 +50,9 @@ const About = () => {
                 <div className="edu-item">
                   <div className="edu-bullet"></div>
                   <div className="edu-content">
-                    <h4>SMP Negeri 1 Surabaya</h4>
+                    <h4>SMP Negeri 35 Surabaya</h4>
                     <span className="edu-major">Pendidikan Dasar & Menengah</span>
-                    <span className="edu-score">Lulusan Berprestasi</span>
+                    <span className="edu-score">Lulusan Berprestasi Sekolah Kawasan</span>
                   </div>
                 </div>
               </li>
