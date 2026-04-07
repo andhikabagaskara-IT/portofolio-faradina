@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -10,7 +11,22 @@ import ScrollReveal from './components/ScrollReveal';
 import { X, MessageCircle } from 'lucide-react';
 import { lockScroll, unlockScroll } from './utils/scrollLock';
 
-// Main App Container
+// Import New Pages
+import ExperiencePage from './pages/ExperiencePage';
+import GalleryPage from './pages/GalleryPage';
+
+// Home Component wrapping all sections
+const Home = ({ onOpenCVModal }) => (
+  <>
+    <ScrollReveal><Hero /></ScrollReveal>
+    <ScrollReveal><About /></ScrollReveal>
+    <ScrollReveal><Skills /></ScrollReveal>
+    <ScrollReveal><Experience /></ScrollReveal>
+    <ScrollReveal><Gallery /></ScrollReveal>
+    <ScrollReveal><Contact onOpenCVModal={onOpenCVModal} /></ScrollReveal>
+  </>
+);
+
 function App() {
   const [theme, setTheme] = useState('light');
   const [isCVModalOpen, setIsCVModalOpen] = useState(false);
@@ -39,24 +55,15 @@ function App() {
   };
 
   const handleCVActionClick = () => {
-    // Tutup popup
     handleCloseCV();
-    
-    // Smooth scroll ke kolom contact (Whatsapp Form)
     const element = document.getElementById('contact');
     if (element) {
-      // Tunggu modal bener-bener close baru trigger animasi
       setTimeout(() => {
         element.scrollIntoView({ behavior: 'smooth' });
-        
-        // Kasih class buatan sebentar buat nimbulin animasi glow (bisa juga pake id di hash route "#contact")
         window.location.hash = 'contact'; 
-        
-        // Pilihan lain: tambah class langsung
         const formCard = document.getElementById('wa-form-highlight');
         if (formCard) {
             formCard.classList.remove('is-glowing');
-            // Force reflow
             void formCard.offsetWidth;
             formCard.classList.add('is-glowing');
         }
@@ -68,13 +75,11 @@ function App() {
     <div className="app">
       <Navbar theme={theme} toggleTheme={toggleTheme} onOpenCVModal={handleOpenCV} />
       
-      {/* Bungkus dengan ScrollReveal */}
-      <ScrollReveal><Hero /></ScrollReveal>
-      <ScrollReveal><About /></ScrollReveal>
-      <ScrollReveal><Skills /></ScrollReveal>
-      <ScrollReveal><Experience /></ScrollReveal>
-      <ScrollReveal><Gallery /></ScrollReveal>
-      <ScrollReveal><Contact onOpenCVModal={handleOpenCV} /></ScrollReveal>
+      <Routes>
+        <Route path="/" element={<Home onOpenCVModal={handleOpenCV} />} />
+        <Route path="/experience" element={<ExperiencePage />} />
+        <Route path="/gallery/:categoryId" element={<GalleryPage />} />
+      </Routes>
 
       {/* CV Modal Overlay */}
       {isCVModalOpen && (
@@ -95,7 +100,6 @@ function App() {
 
             <h2 style={{ fontSize: '2rem', color: 'var(--color-primary)', marginBottom: '20px'}}>Document Preview</h2>
             
-            {/* Fake CV Document Thumbnail */}
             <div style={{
                 width: '100%', height: '350px', background: 'white', 
                 borderRadius: '16px', boxShadow: '0 10px 30px rgba(0,0,0,0.1)',

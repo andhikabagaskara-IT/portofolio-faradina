@@ -1,6 +1,7 @@
 import React from 'react';
 import './Hero.css';
 import { Briefcase, Mail } from 'lucide-react';
+import profileImg from '../assets/img/rarapro.png';
 
 const Hero = () => {
   return (
@@ -35,7 +36,7 @@ const Hero = () => {
         </div>
         <div className="hero-image-wrapper">
           <div className="hero-image-placeholder glass-card">
-            <img src="rarapro.png" alt="img-profile" />
+            <img src={profileImg} alt="img-profile" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 'inherit' }} />
             <div className="hero-blob"></div>
           </div>
         </div>
