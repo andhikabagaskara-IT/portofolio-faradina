@@ -17,7 +17,7 @@ const Hero = () => {
       <div className="container hero-container">
         <div className="hero-content">
           <h2 className="hero-greeting">Portofolio Profesional</h2>
-          <h1 className="hero-name">Faradina</h1>
+          <h1 className="hero-name">Faradina Aulia</h1>
           <h3 className="hero-title">Junior Tax Consultant & Digital Content Creator</h3>
           <p className="hero-tagline glass-card" style={{ padding: '20px', display: 'inline-block' }}>
             Membangun kepatuhan perpajakan yang strategis dengan komunikasi yang efektif. 
