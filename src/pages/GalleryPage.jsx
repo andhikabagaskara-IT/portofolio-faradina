@@ -88,11 +88,11 @@ const GalleryPage = () => {
     <div className="page-container" style={{ padding: '40px 20px', minHeight: '100vh', background: 'var(--color-bg)' }}>
       <div className="container">
         <button 
-          onClick={() => navigate('/')} 
+          onClick={() => navigate('/#gallery')} 
           className="btn btn-secondary" 
           style={{ marginBottom: '30px', display: 'flex', alignItems: 'center', gap: '8px' }}
         >
-          <ArrowLeft size={20} /> Back to Home
+          <ArrowLeft size={20} /> Back to Documentation
         </button>
 
         <header style={{ marginBottom: '50px' }}>

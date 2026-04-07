@@ -6,15 +6,15 @@ const Experience = () => {
   // Partial items specifically for homepage
   const initialExperiences = [
     {
-      role: "Tax Officer (Intern)",
-      company: "KAP Dummy Company",
-      period: "Des 2024 - Sekarang",
+      role: "Digital Content Creator",
+      company: "Taxspeed Company",
+      period: "Sep 2025 - Sekarang",
       description: "Bertanggung jawab dalam pelaporan SPT Tahunan klien corporate, melakukan rekonsiliasi data PPN, serta membantu persiapan dokumen untuk pemeriksaan pajak. Mengoperasikan DJP Online dan e-Faktur secara rutin."
     },
     {
-      role: "Staff Administrasi Keuangan",
-      company: "PT Keuangan Nusantara",
-      period: "Jan 2023 - Nov 2024",
+      role: "Staff Administrasi Keuangan & Pajak",
+      company: "Victory Tax Consultant Company",
+      period: "Jun 2025 - Agt 2025",
       description: "Melakukan entry data transaksi harian, mengelola kas kecil, dan menyiapkan draft laporan keuangan bulanan. Memastikan kepatuhan terhadap pencatatan faktur pajak masukan."
     }
   ];

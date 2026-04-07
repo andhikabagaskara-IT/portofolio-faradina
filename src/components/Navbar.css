@@ -30,10 +30,47 @@
   font-size: 1.5rem;
   font-weight: 800;
   color: var(--color-primary);
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 2px;
 }
 
 .nav-logo span {
   color: var(--color-secondary);
+  position: relative;
+}
+
+/* Glowing/Shimmer Animation for TaxPro Logo */
+.nav-logo::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 60%,
+    transparent 100%
+  );
+  transform: rotate(45deg);
+  animation: logo-shimmer 3s infinite linear;
+  pointer-events: none;
+}
+
+@keyframes logo-shimmer {
+  0% { transform: translateX(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) rotate(45deg); }
+}
+
+.nav-logo:hover {
+  text-shadow: 0 0 10px var(--color-primary);
 }
 
 .nav-links {

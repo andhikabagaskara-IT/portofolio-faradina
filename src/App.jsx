@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -16,20 +16,36 @@ import ExperiencePage from './pages/ExperiencePage';
 import GalleryPage from './pages/GalleryPage';
 
 // Home Component wrapping all sections
-const Home = ({ onOpenCVModal }) => (
-  <>
-    <ScrollReveal><Hero /></ScrollReveal>
-    <ScrollReveal><About /></ScrollReveal>
-    <ScrollReveal><Skills /></ScrollReveal>
-    <ScrollReveal><Experience /></ScrollReveal>
-    <ScrollReveal><Gallery /></ScrollReveal>
-    <ScrollReveal><Contact onOpenCVModal={onOpenCVModal} /></ScrollReveal>
-  </>
-);
+const Home = ({ onOpenCVModal }) => {
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const element = document.querySelector(hash);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, [hash]);
+
+  return (
+    <>
+      <ScrollReveal><Hero /></ScrollReveal>
+      <ScrollReveal><About /></ScrollReveal>
+      <ScrollReveal><Skills /></ScrollReveal>
+      <ScrollReveal><Experience /></ScrollReveal>
+      <ScrollReveal><Gallery /></ScrollReveal>
+      <ScrollReveal><Contact onOpenCVModal={onOpenCVModal} /></ScrollReveal>
+    </>
+  );
+};
 
 function App() {
   const [theme, setTheme] = useState('light');
   const [isCVModalOpen, setIsCVModalOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') || 'light';
@@ -73,7 +89,9 @@ function App() {
 
   return (
     <div className="app">
-      <Navbar theme={theme} toggleTheme={toggleTheme} onOpenCVModal={handleOpenCV} />
+      {location.pathname === '/' && (
+        <Navbar theme={theme} toggleTheme={toggleTheme} onOpenCVModal={handleOpenCV} />
+      )}
       
       <Routes>
         <Route path="/" element={<Home onOpenCVModal={handleOpenCV} />} />
